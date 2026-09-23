@@ -16,7 +16,8 @@ function($alumnos){
             $nombreAlumnoNotaAlta=$alumnos[$i]["nombre"];
         }
     }
-}
+    return $nombreAlumnoNotaAlta;
+};
 
 //Calcula y muuestra la media de las notas
 function calcularMedia($alumnos){
@@ -24,18 +25,18 @@ function calcularMedia($alumnos){
     foreach($alumnos as $alumno) {
         $suma+=$alumno["nota"];
     }
+    return $suma/count($alumnos);
 }
 
 //Mayores de 19 años
 function mostrarMayores($alumnos){
     $mayores=[];
-    $lista=[];
     foreach($alumnos as $alumno) {
         if($alumno["edad"]>19){
             array_push($mayores, $alumno);
-            array_push($lista, $alumno["nombre"]);
         }
     }
+    return $mayores;
 }
 ?>
 
